@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Actor Guessing Game</title>
+</head>
+
+<body>
+
+<h1>Actors by EL YAKOUTI MOHAMED</h1>
+
+<form>
+    <label for="actor">Peter Pan</label>
+    <input type="password" id="actor" name="actor" value="Robin Williams" autocomplete="off"> <br>
+
+    <label for="guess">Who is the actor</label>
+    <input type="text" id="guess" name="guess" autocomplete="off" autofocus> <br>
+
+    <input type="button" onclick="checkActor()" value="Check the guess">
+</form>
+
+<p id="result">This text will be replaced</p>
+
+<script>
+    var correct = 0;
+    var notCorrect = 0;
+
+    function checkActor() {
+        var actor = document.getElementById("actor").value;
+        var guess = document.getElementById("guess").value;
+        console.log("actor=[" + actor + "] guess=[" + guess + "]");
+
+        if (actor.trim().toLowerCase() === guess.trim().toLowerCase()) {
+            correct = correct + 1;
+            alert("That's right");
+        } else {
+            notCorrect = notCorrect + 1;
+            alert("Better luck next time");
+        }
+
+        document.getElementById("result").innerHTML =
+            "Correct: " + correct + " &nbsp; Not correct: " + notCorrect;
+    }
+</script>
+
+</body>
+</html>
