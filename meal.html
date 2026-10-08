@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Planner</title>
+</head>
+<body>
+
+    <h1>EL YAKOUTI MOHAMED meal planner</h1>
+
+    <!-- Part 7: Checkbox Form -->
+    <form>
+        <label for="cb_breakfast">
+            <input type="checkbox" id="cb_breakfast" value="True" checked> Breakfast
+        </label><br>
+
+        <label for="cb_lunch">
+            <input type="checkbox" id="cb_lunch" value="False"> Lunch
+        </label><br>
+
+        <label for="cb_dinner">
+            <input type="checkbox" id="cb_dinner" value="True" checked> Dinner
+        </label><br><br>
+
+        <input type="button" onclick="choices()" value="Meal Plan Choices">
+    </form>
+
+    <br>
+
+    <!-- Part 8: Cuisine and Beverage Form -->
+    <form>
+        <label for="cuisine">Enter cuisine type: </label>
+        <input type="text" id="cuisine" value="Italian"><br><br>
+
+        <label for="beverage">Enter beverage choice: </label>
+        <input type="text" id="beverage" value="water"><br><br>
+
+        <input type="button" onclick="updateMeal()" value="Update the meal plan">
+    </form>
+
+    <!-- Result Display Element -->
+    <h3>Meal Plan Result:</h3>
+    <p id="mealResult">Meal plan will appear here.</p>
+
+    <script>
+        // Part 7: Global Object Variable
+        var my_meal_plan = {};
+
+        // Part 7 Function
+        function choices() {
+            my_meal_plan = {}; // Reset object
+
+            my_meal_plan.breakfast = document.getElementById("cb_breakfast").checked;
+            my_meal_plan.lunch = document.getElementById("cb_lunch").checked;
+            my_meal_plan.dinner = document.getElementById("cb_dinner").checked;
+
+            document.getElementById("mealResult").innerHTML = JSON.stringify(my_meal_plan);
+        }
+
+        // Part 8 Function
+        function updateMeal() {
+            var cuisineValue = document.getElementById("cuisine").value;
+            var beverageValue = document.getElementById("beverage").value;
+
+            my_meal_plan["cuisine"] = cuisineValue;
+            my_meal_plan["beverage"] = beverageValue;
+
+            document.getElementById("mealResult").innerHTML = JSON.stringify(my_meal_plan);
+        }
+    </script>
+
+</body>
+</html>

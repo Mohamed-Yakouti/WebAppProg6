@@ -21,9 +21,19 @@
 
 <p id="result">This text will be replaced</p>
 
+<div>
+    <img id="foodImage" src="food1.jpg"
+         alt="Food"
+         width="150"
+         height="150"
+         onclick="updatePic()">
+</div>
+
 <script>
     var correct = 0;
     var notCorrect = 0;
+
+    let usePic = 1;
 
     function checkActor() {
         var actor = document.getElementById("actor").value;
@@ -40,6 +50,27 @@
 
         document.getElementById("result").innerHTML =
             "Correct: " + correct + " &nbsp; Not correct: " + notCorrect;
+    }
+
+    function updatePic() {
+        let image = document.getElementById("foodImage");
+
+        switch (usePic) {
+            case 1:
+                image.src = "food1.jpg";
+                usePic = 2;
+                break;
+
+            case 2:
+                image.src = "food2.jpg";
+                usePic = 3;
+                break;
+
+            case 3:
+                image.src = "food3.jpg";
+                usePic = 1;
+                break;
+        }
     }
 </script>
 
