@@ -2,46 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Planner</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light p-4">
 
-    <h1>EL YAKOUTI MOHAMED meal planner</h1>
+    <div class="container bg-white p-4 rounded shadow-sm" style="max-width: 650px;">
+        <h2 class="mb-4 text-primary text-center">EL YAKOUTI MOHAMED meal planner</h2>
 
-    <!-- Part 7: Checkbox Form -->
-    <form>
-        <label for="cb_breakfast">
-            <input type="checkbox" id="cb_breakfast" value="True" checked> Breakfast
-        </label><br>
+        <!-- Part 7: Checkbox Form -->
+        <h4 class="text-secondary mb-3">Meal Selection</h4>
+        <form class="mb-3">
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="cb_breakfast" value="True" checked>
+                <label class="form-check-label" for="cb_breakfast">Breakfast</label>
+            </div>
 
-        <label for="cb_lunch">
-            <input type="checkbox" id="cb_lunch" value="False"> Lunch
-        </label><br>
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="cb_lunch" value="False">
+                <label class="form-check-label" for="cb_lunch">Lunch</label>
+            </div>
 
-        <label for="cb_dinner">
-            <input type="checkbox" id="cb_dinner" value="True" checked> Dinner
-        </label><br><br>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="cb_dinner" value="True" checked>
+                <label class="form-check-label" for="cb_dinner">Dinner</label>
+            </div>
 
-        <input type="button" onclick="choices()" value="Meal Plan Choices">
-    </form>
+            <input type="button" onclick="choices()" class="btn btn-primary w-100" value="Meal Plan Choices">
+        </form>
 
-    <br>
+        <hr class="my-4">
 
-    <!-- Part 8: Cuisine and Beverage Form -->
-    <form>
-        <label for="cuisine">Enter cuisine type: </label>
-        <input type="text" id="cuisine" value="Italian"><br><br>
+        <!-- Part 8: Cuisine and Beverage Form -->
+        <h4 class="text-secondary mb-3">Cuisine & Beverage Options</h4>
+        <form class="mb-3">
+            <div class="mb-3">
+                <label for="cuisine" class="form-label">Enter cuisine type:</label>
+                <input type="text" id="cuisine" class="form-control" value="Italian">
+            </div>
 
-        <label for="beverage">Enter beverage choice: </label>
-        <input type="text" id="beverage" value="water"><br><br>
+            <div class="mb-3">
+                <label for="beverage" class="form-label">Enter beverage choice:</label>
+                <input type="text" id="beverage" class="form-control" value="water">
+            </div>
 
-        <input type="button" onclick="updateMeal()" value="Update the meal plan">
-    </form>
+            <input type="button" onclick="updateMeal()" class="btn btn-success w-100" value="Update the meal plan">
+        </form>
 
-    <!-- Result Display Element -->
-    <h3>Meal Plan Result:</h3>
-    <p id="mealResult">Meal plan will appear here.</p>
+        <!-- Result Display Div -->
+        <h5 class="mt-4">Meal Plan Result:</h5>
+        <div id="mealResult" class="alert alert-info fw-bold">
+            Meal plan will appear here.
+        </div>
+    </div>
 
     <script>
         // Part 7: Global Object Variable
